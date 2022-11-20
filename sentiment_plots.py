@@ -7,7 +7,7 @@ from collections import Counter
 keyword = 'shoppe'
 
 
-df = pd.read_csv(f'sentimentos_{keyword}.csv', sep='\t', encoding='utf-8')
+df = pd.read_csv(f'analysed_tweets_{keyword}.csv', sep='\t', encoding='utf-8')
 
 def count_sentiments(df):
     count = df['analysis'].value_counts(normalize=True).mul(100)
@@ -15,12 +15,12 @@ def count_sentiments(df):
 
 
 def count_words(df):
-    stopwords = ['', 'da', 'a', 'o', 'do', 'de', 'e', 'que', 'é', 'para',
+    stopwords = ['', 'a', 'as', 'aqui', 'da', 'o', 'do', 'de', 'e', 'que', 'é', 'para',
                  'na', 'no', 'pra', 'com', 'não', 'um', 'se', 'eu', 'em',
                  'os', 'mas', 'foi', 'só', 'uma', 'mais', 'sobre', 'muito',
-                 'essa', 'por', 'ele', 'tem', 'ser', 'já', 'dos', 'as',
+                 'essa', 'por', 'ele', 'tem', 'ser', 'já', 'dos',
                  'vai', 'como', 'está', 'quem', 'vc', 'você', 'ou', 'isso',
-                 'q', 'pela']
+                 'q', 'pela', 'meu', 'minha', 'me', 'tá', 'vou', 'esse']
     stopwords = stopwords + keyword.split(' ')
     words = ' '.join(df.text).lower()
     words = re.sub('[.,!?]', '', words)

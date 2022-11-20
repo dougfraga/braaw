@@ -2,7 +2,7 @@ import pandas as pd
 from googletrans import Translator
 
 
-keyword = 'shoppe2'
+keyword = 'shoppe_C'
 
 
 # Functions
@@ -28,14 +28,16 @@ def translate_content(df):
         log_translation(trans_text.text)
         lines.append(trans_text.text)
     df['text_en'] = lines
-    df.drop(['Unnamed: 0'], axis=1, inplace=True)
+    try:
+        df.drop(['Unnamed: 0'], axis=1, inplace=True)
+    except:
+        pass
     df.to_csv(f'tweets_en_{keyword}.csv', sep='\t', encoding='utf-8')
     return df
 
 
 if __name__ == '__main__':
-    df = pd.read_csv(f'tweets_filt_{keyword}.csv', sep='\t', encoding='utf-8')
-    print(df)
+    df = pd.read_csv(f'tweets_filt_{keyword}.txt', sep='\t', encoding='utf-8')
     df = translate_content(df)
     print(df)
 
