@@ -3,7 +3,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 from scipy.special import softmax
 
 
-keyword = 'shoppe'
+keyword = 'shoppe_N'
 
 
 def sentAnl(text):

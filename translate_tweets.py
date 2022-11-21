@@ -2,7 +2,7 @@ import pandas as pd
 from googletrans import Translator
 
 
-keyword = 'shoppe_C'
+keyword = 'shoppe_S'
 
 
 # Functions

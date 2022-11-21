@@ -10,7 +10,7 @@ Basic Resources for Automatic Analysis on the Web (BRAAW)
     Removes emojis
 
 ## translate_tweets.py
-    Translates each tweet frlm pt to en
+    Translates each tweet from Portuguese (pt) to English (en)
 
 ## analyse_tweets.py
     Apply a sentiment analysis model
